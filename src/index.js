@@ -123,3 +123,23 @@ panelElems.forEach(elem => {
 // and returns an anchor tag with the right href, class and textContent.
 // Loop over the 'linkData' in the data folder, generate anchor tags
 // and append them to the nav.
+
+// component => FUNCTION!!!
+// const linkMaker = (linkObj) => {}
+function linkMaker(linkObj) {
+  // STEP 1: Create an a href tag
+  const aTag = document.createElement("a");
+  // STEP 2: Add associated attributes / classes / content
+  aTag.href = linkObj.href;
+  aTag.className = linkObj.className;
+  aTag.textContent = linkObj.text;
+  // STEP 3: return the element!
+  return aTag;
+}
+
+const navElem = document.querySelector("nav");
+
+linkData.forEach(link => {
+  const linkElem = linkMaker(link);
+  navElem.appendChild(linkElem);
+})
