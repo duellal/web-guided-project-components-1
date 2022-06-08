@@ -38,10 +38,12 @@ imageData.forEach(imgObj => {
 //  On the one hand, the default export from data/panelData.js
 //  On the other hand, the default export from data/constants.js
 //  Destructure `open` and `close` from the constants
+import panelData from "./data/panelData";
+import linkData from "./data/linkData";
 
 
 // TASK 2- Verify our imports using log statements
-console.log() // log the panelData
+console.log(panelData) // log the panelData
 console.log() // log the open arrow
 console.log() // log the close arrow
 
