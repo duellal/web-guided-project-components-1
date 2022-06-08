@@ -2,11 +2,37 @@
 //  that takes an { imgURL } and returns an img element.
 //  Then loop over these URLs making images as you go:
 const imageData = [
-  { imageURL: 'https://images.dog.ceo/breeds/mastiff-tibetan/n02108551_978.jpg' },
-  { imageURL: 'https://images.dog.ceo/breeds/mastiff-bull/n02108422_3398.jpg' },
-  { imageURL: 'https://images.dog.ceo/breeds/mastiff-bull/n02108422_2947.jpg' },
+  { imageURL: 'https://images.dog.ceo/breeds/mastiff-tibetan/n02108551_978.jpg', alt: "Blah" },
+  { imageURL: 'https://images.dog.ceo/breeds/mastiff-bull/n02108422_3398.jpg', alt: "Blah" },
+  { imageURL: 'https://images.dog.ceo/breeds/mastiff-bull/n02108422_2947.jpg', alt: "Blah" }
 ]
 
+// A component is just a fancy word for a function!!
+function makeImage({ imageURL, alt }) {
+  // Destructuring! Fun!
+  // const imageURL = img.imageURL;
+  // const alt = img.alt;
+  const imgElem = document.createElement("img");
+  // imgElem.setAttribute("src", imageURL);
+  imgElem.src = imageURL;
+  imgElem.style.height = "10em";
+  return imgElem;
+}
+
+imageData.forEach(imgObj => {
+  const image = makeImage(imgObj);
+  // document.body.prepend(image)
+})
+
+// WAT IS A FUNCTION?@! Specific operation...perform specific tasks...reusable piece of code...
+// something that (potentially) receives an input and (potentially) returns an output
+// Does one thing and does it well -> Unix philosophy
+
+/**
+ * Difference between...
+ * 1.) function declaration: hoisted!
+ * 2.) function expression:  stays in place
+ */
 
 // TASK 1- Import the data we need to "hydrate" our component.
 //  On the one hand, the default export from data/panelData.js
