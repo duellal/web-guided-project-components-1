@@ -88,9 +88,9 @@ function makePanel(panelObj) {
     </div>
   */
   
-  panel.appendChild(panelBar);
-  panel.appendChild(panelContent);
-  panelBar.appendChild(panelTitle);
+  panel.appendChild(panelBar); // <div><div></div></div>
+  panel.appendChild(panelContent); // <div><div><div></div></div></div>
+  panelBar.appendChild(panelTitle); // <div><div><h3></h3></div><div></div></div>
   panelBar.appendChild(panelButtons);
   panelButtons.appendChild(openButton);
   panelButtons.appendChild(closeButton);
@@ -114,6 +114,13 @@ function makePanel(panelObj) {
         </div>
       <!-- Remove this -->
    */
+
+  panel.classList.add("panel");
+  panelBar.classList.add("panel-bar");
+  panelButtons.classList.add("panel-buttons");
+  openButton.classList.add("panel-btn-open");
+  closeButton.classList.add("panel-btn-close", "hide-btn");
+  panelContent.classList.add("panel-content");
 
 
   // TASK 8- Set text content using arguments as raw material
