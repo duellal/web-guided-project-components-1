@@ -12,3 +12,11 @@ number if `1234` is being used by another application.
 - Navigate into the project folder.
 - Run `npm install` to download the project's dependencies.
 - Run `npm start` to compile the project and spin up a dev server on `localhost`.
+
+
+## Notes:
+Components:
+- Reusable peice of code that represents a section of the user interface
+    - ex: modal, button, checkbox, accordion (text that comes down from an arrow/button), content switcher, date picker, dropdown, etc.
+- made up of html, css, and javascript
+
