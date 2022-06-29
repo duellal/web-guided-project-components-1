@@ -7,6 +7,21 @@ const imageData = [
   { imageURL: 'https://images.dog.ceo/breeds/mastiff-bull/n02108422_2947.jpg' },
 ]
 
+// The component is an image that takes the raw data
+function makeImg({imageURL}){ //Destructuring - ({imageURL}) element that is passed in 
+   const imgElement = document.createElement('img');
+   imgElement.style.width = '10em';
+   imgElement.src = imageURL; //set image property to be the image we passed in
+   return imgElement;
+}
+
+//Looped over the data array and invoked the component (makeImg function)
+imageData.forEach((imgObj) => {
+  // 1) Make an image
+  const img = makeImg(imgObj)
+  // 2) Attach image to DOM
+  document.body.prepend(img);
+})
 
 // TASK 1- Import the data we need to "hydrate" our component.
 //  On the one hand, the default export from data/panelData.js
