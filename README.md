@@ -22,6 +22,3 @@ Components:
 
 Reusable code:
 - a function that takes in data and producing things in the user interface (UI)
-
-Q+A:
-- 
