@@ -148,21 +148,22 @@ function makePanel(/* what data does the panel need? */ { title, content }) {
   return panel;
 }
 
-//Testing that the makePanel function is currently working properly:
-const test = makePanel({ title: 'Test Title', content: 'Test Content' })
-console.log(test)
+// //Testing that the makePanel function is currently working properly:
+// const test = makePanel({ title: 'Test Title', content: 'Test Content' })
 
-//Delete when done with lecture. These are experiments to understand the code better on my own:
-// const panel1 = document.createElement('div.panel-content.toggle-on')
-// console.log(panel1);
-// const panel2 = document.createElement('div')
-// panel2.classList.add('content-panel', 'toggle-on')
-// console.log(panel2)
 
 // TASK 10- Loop through the panelData we imported from the data folder
 //  creating panels for each content and title and append them to the DOM.
 //  We can do this with a single forEach, or with a map and a forEach.
 
+//Creates an array
+const panelMap = panelData.map((panelObj) => {
+  return makePanel(panelObj)
+})
+
+panelMap.forEach((panelElement) => {
+  accordion.appendChild(panelElement);
+})
 
 // [STRETCH] Comment out the links inside the nav and
 // write a linkMaker that takes { href, className, text }
